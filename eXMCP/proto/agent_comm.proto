@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package agentcomm;
+
+service AgentComm {
+  rpc RegisterAgent (RegisterRequest) returns (RegisterReply);
+  rpc Heartbeat (HeartbeatRequest) returns (HeartbeatReply);
+  rpc SendMessage (MessageRequest) returns (MessageReply);
+  rpc StreamMessages (stream MessageRequest) returns (stream MessageReply);
+  rpc NextTask (NextTaskRequest) returns (TaskReply);
+  rpc TaskResult (TaskResultRequest) returns (TaskResultReply);
+}
+
+message RegisterRequest {
+  string agent_id = 1;
+  string agent_type = 2;
+  string api_key = 3;
+  string meta = 4;
+}
+message RegisterReply {
+  string status = 1;
+}
+
+message HeartbeatRequest {
+  string agent_id = 1;
+  float cpu = 2;
+  int32 processes = 3;
+  string api_key = 4;
+}
+message HeartbeatReply {
+  string status = 1;
+}
+
+message MessageRequest {
+  string sender = 1;
+  string target = 2;
+  string content = 3;
+  int32 priority = 4;
+  string api_key = 5;
+}
+message MessageReply {
+  string content = 1;
+  string status = 2;
+}
+
+message NextTaskRequest {
+  string agent_id = 1;
+  string api_key = 2;
+}
+message TaskReply {
+  string task_id = 1;
+  string content = 2;
+  int32 priority = 3;
+  string status = 4;
+}
+
+message TaskResultRequest {
+  string agent_id = 1;
+  string task_id = 2;
+  string result = 3;
+  string api_key = 4;
+}
+message TaskResultReply {
+  string status = 1;
+} 

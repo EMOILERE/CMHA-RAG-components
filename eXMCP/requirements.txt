@@ -1,0 +1,9 @@
+mcp
+openai
+grpcio
+grpcio-tools
+websockets
+fastapi
+uvicorn
+pydantic
+httpx 

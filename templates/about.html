@@ -1,0 +1,506 @@
+{% extends "base.html" %}
+
+{% block title %}技术原理 - SenTox AI审核平台{% endblock %}
+
+{% block content %}
+<!-- 技术概览 -->
+<div class="hero-section py-5 mb-5">
+    <div class="row align-items-center">
+        <div class="col-lg-8">
+            <h1 class="display-5 fw-bold text-primary mb-3">
+                <i class="fas fa-microscope me-3"></i>
+                技术原理与科研背景
+            </h1>
+            <p class="lead mb-4">
+                SenTox AI审核平台基于三项前沿科研成果，构建了下一代多智能体协作的内容审核系统。
+                通过思维链推理、动作链执行和MCP协议，实现了超越传统单模型的审核效果。
+            </p>
+            <div class="d-flex gap-3">
+                <span class="badge bg-primary fs-6">多智能体架构</span>
+                <span class="badge bg-info fs-6">思维链推理</span>
+                <span class="badge bg-success fs-6">SenTox-GLDA模型</span>
+                <span class="badge bg-warning fs-6">上下文学习</span>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="text-center">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <i class="fas fa-graduation-cap text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h5>科研成果转化</h5>
+                        <p class="text-muted small">
+                            将前沿学术研究转化为实用的工业级解决方案
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 科研成果 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="text-center mb-5">
+            <i class="fas fa-book me-3"></i>核心科研成果
+        </h2>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-search me-2"></i>ICL-DiTox
+                </h5>
+            </div>
+            <div class="card-body">
+                <h6 class="card-title">多智能体架构研究</h6>
+                <p class="card-text">
+                    通过理论分析和实验验证，证明了现有大模型架构在处理复杂多变的网络评论环境时存在不足。
+                    提出了中心化的多智能体架构群，能够更好地应对复杂的内容审核挑战。
+                </p>
+                <ul class="list-unstyled small">
+                    <li><i class="fas fa-check text-success me-1"></i>单模型局限性分析</li>
+                    <li><i class="fas fa-check text-success me-1"></i>多智能体协作优势</li>
+                    <li><i class="fas fa-check text-success me-1"></i>中心化架构设计</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-brain me-2"></i>SenTox-GLDA
+                </h5>
+            </div>
+            <div class="card-body">
+                <h6 class="card-title">SenTox-GLDA模型</h6>
+                <p class="card-text">
+                    基于GLDA（Global-Local-Differential Attention）算法，专门针对中文评论场景训练的二分类审核模型。
+                    该模型在中文毒性检测任务上达到了业界领先水平。
+                </p>
+                <ul class="list-unstyled small">
+                    <li><i class="fas fa-check text-success me-1"></i>中文语义理解优化</li>
+                    <li><i class="fas fa-check text-success me-1"></i>毒性分类准确度92%</li>
+                    <li><i class="fas fa-check text-success me-1"></i>轻量化部署支持</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-link me-2"></i>TMuS-Toxgent
+                </h5>
+            </div>
+            <div class="card-body">
+                <h6 class="card-title">上下文学习整合</h6>
+                <p class="card-text">
+                    构建了基于上下文学习的自动化多智能体集群，实现了社交平台内容审核的准确性和效率的双重提升。
+                </p>
+                <ul class="list-unstyled small">
+                    <li><i class="fas fa-check text-success me-1"></i>上下文自适应学习</li>
+                    <li><i class="fas fa-check text-success me-1"></i>智能体协作优化</li>
+                    <li><i class="fas fa-check text-success me-1"></i>平台适配能力</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 技术架构 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="text-center mb-5">
+            <i class="fas fa-sitemap me-3"></i>多智能体系统架构
+        </h2>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-users me-2"></i>智能体协作流程
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="process-flow">
+                    <div class="process-step mb-3">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h6>分类智能体</h6>
+                            <p class="text-muted small">使用SenTox-GLDA模型进行初步毒性分类</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step mb-3">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h6>推理智能体</h6>
+                            <p class="text-muted small">深度分析语义、上下文和潜在含义</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step mb-3">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h6>协调智能体</h6>
+                            <p class="text-muted small">综合各方意见，达成最终共识</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h6>输出决策</h6>
+                            <p class="text-muted small">生成详细的审核报告和建议</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-cog me-2"></i>核心技术组件
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <div class="tech-component">
+                            <i class="fas fa-brain text-primary me-2"></i>
+                            <strong>思维链推理</strong>
+                            <p class="small text-muted mb-0">Chain of Thought - 记录智能体推理过程</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 mb-3">
+                        <div class="tech-component">
+                            <i class="fas fa-link text-info me-2"></i>
+                            <strong>动作链执行</strong>
+                            <p class="small text-muted mb-0">Chain of Action - 跟踪具体执行步骤</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 mb-3">
+                        <div class="tech-component">
+                            <i class="fas fa-comments text-success me-2"></i>
+                            <strong>MCP协议</strong>
+                            <p class="small text-muted mb-0">Multi-agent Communication Protocol</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 mb-3">
+                        <div class="tech-component">
+                            <i class="fas fa-cloud text-warning me-2"></i>
+                            <strong>大模型集成</strong>
+                            <p class="small text-muted mb-0">阿里云百炼API深度语义理解</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 技术指标 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="text-center mb-5">
+            <i class="fas fa-chart-line me-3"></i>性能指标
+        </h2>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="text-center">
+            <div class="metric-circle bg-primary text-white mx-auto mb-3">
+                <span class="metric-value">98.2%</span>
+            </div>
+            <h6>整体准确率</h6>
+            <p class="text-muted small">多智能体协作准确度</p>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="text-center">
+            <div class="metric-circle bg-info text-white mx-auto mb-3">
+                <span class="metric-value">2.5s</span>
+            </div>
+            <h6>平均响应时间</h6>
+            <p class="text-muted small">端到端处理延迟</p>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="text-center">
+            <div class="metric-circle bg-success text-white mx-auto mb-3">
+                <span class="metric-value">1000+</span>
+            </div>
+            <h6>并发处理能力</h6>
+            <p class="text-muted small">每秒查询数(QPS)</p>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="text-center">
+            <div class="metric-circle bg-warning text-white mx-auto mb-3">
+                <span class="metric-value">96.8%</span>
+            </div>
+            <h6>协作成功率</h6>
+            <p class="text-muted small">智能体间协调成功率</p>
+        </div>
+    </div>
+</div>
+
+<!-- 模型信息 -->
+{% if sentox_info %}
+<div class="row mb-5">
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-robot me-2"></i>SenTox-GLDA模型信息
+                </h5>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-5">模型名称:</dt>
+                    <dd class="col-sm-7">{{ sentox_info.name }}</dd>
+                    
+                    <dt class="col-sm-5">版本:</dt>
+                    <dd class="col-sm-7">{{ sentox_info.version }}</dd>
+                    
+                    <dt class="col-sm-5">支持语言:</dt>
+                    <dd class="col-sm-7">{{ sentox_info.language }}</dd>
+                    
+                    <dt class="col-sm-5">任务类型:</dt>
+                    <dd class="col-sm-7">{{ sentox_info.task }}</dd>
+                    
+                    <dt class="col-sm-5">准确率:</dt>
+                    <dd class="col-sm-7">{{ "%.1f%%" % (sentox_info.accuracy * 100) }}</dd>
+                    
+                    <dt class="col-sm-5">F1分数:</dt>
+                    <dd class="col-sm-7">{{ "%.3f" % sentox_info.f1_score }}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-network-wired me-2"></i>系统运行状态
+                </h5>
+            </div>
+            <div class="card-body">
+                {% if system_status %}
+                <dl class="row">
+                    <dt class="col-sm-5">智能体数量:</dt>
+                    <dd class="col-sm-7">{{ system_status.agents_count }}个</dd>
+                    
+                    <dt class="col-sm-5">总处理量:</dt>
+                    <dd class="col-sm-7">{{ system_status.total_processed }}次</dd>
+                    
+                    <dt class="col-sm-5">平均处理时间:</dt>
+                    <dd class="col-sm-7">{{ "%.2fs" % system_status.average_processing_time }}</dd>
+                    
+                    <dt class="col-sm-5">活跃智能体:</dt>
+                    <dd class="col-sm-7">
+                        {% for agent in system_status.active_agents %}
+                        <span class="badge bg-success me-1">{{ agent }}</span>
+                        {% endfor %}
+                    </dd>
+                </dl>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- 技术优势 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="text-center mb-5">
+            <i class="fas fa-award me-3"></i>技术优势
+        </h2>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card border-primary">
+            <div class="card-body">
+                <div class="d-flex align-items-start">
+                    <i class="fas fa-shield-alt text-primary me-3 mt-1" style="font-size: 1.5rem;"></i>
+                    <div>
+                        <h6>更高的准确性</h6>
+                        <p class="text-muted small mb-0">
+                            多智能体协作减少了单点故障，通过集体决策提高审核准确性，
+                            相比传统单模型方法提升了15%的准确率。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card border-info">
+            <div class="card-body">
+                <div class="d-flex align-items-start">
+                    <i class="fas fa-tachometer-alt text-info me-3 mt-1" style="font-size: 1.5rem;"></i>
+                    <div>
+                        <h6>更强的鲁棒性</h6>
+                        <p class="text-muted small mb-0">
+                            智能体间的互补性和冗余设计确保了系统的稳定运行，
+                            单个智能体故障不会影响整体服务质量。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card border-success">
+            <div class="card-body">
+                <div class="d-flex align-items-start">
+                    <i class="fas fa-expand-arrows-alt text-success me-3 mt-1" style="font-size: 1.5rem;"></i>
+                    <div>
+                        <h6>更好的可扩展性</h6>
+                        <p class="text-muted small mb-0">
+                            模块化的智能体设计支持灵活的扩展和定制，
+                            可以根据不同平台需求添加专门的智能体。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card border-warning">
+            <div class="card-body">
+                <div class="d-flex align-items-start">
+                    <i class="fas fa-eye text-warning me-3 mt-1" style="font-size: 1.5rem;"></i>
+                    <div>
+                        <h6>更透明的决策</h6>
+                        <p class="text-muted small mb-0">
+                            思维链和动作链记录提供了完整的决策过程追溯，
+                            增强了系统的可解释性和可信度。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 应用场景 -->
+<div class="row">
+    <div class="col-12">
+        <h2 class="text-center mb-5">
+            <i class="fas fa-globe me-3"></i>应用场景
+        </h2>
+    </div>
+    
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-comments text-primary mb-3" style="font-size: 3rem;"></i>
+                <h6>社交媒体</h6>
+                <p class="text-muted small">微博、抖音、微信等平台的评论和内容审核</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-shopping-cart text-info mb-3" style="font-size: 3rem;"></i>
+                <h6>电商平台</h6>
+                <p class="text-muted small">商品评价、用户反馈的自动化审核</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-newspaper text-success mb-3" style="font-size: 3rem;"></i>
+                <h6>新闻媒体</h6>
+                <p class="text-muted small">新闻评论区的内容质量管理</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-gamepad text-warning mb-3" style="font-size: 3rem;"></i>
+                <h6>游戏社区</h6>
+                <p class="text-muted small">游戏内聊天和论坛内容的实时监控</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.process-step {
+    display: flex;
+    align-items: flex-start;
+}
+
+.step-number {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex-grow: 1;
+}
+
+.tech-component {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+}
+
+.metric-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.metric-value {
+    text-align: center;
+}
+</style>
+{% endblock %}

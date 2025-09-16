@@ -1,0 +1,270 @@
+{% extends "base.html" %}
+
+{% block title %}注册 - SenTox AI审核平台{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4 class="mb-0">
+                    <i class="fas fa-user-plus me-2"></i>用户注册
+                </h4>
+                <small class="text-muted">创建新账户体验AI审核服务</small>
+            </div>
+            <div class="card-body">
+                <form method="POST" id="registerForm">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">
+                            <i class="fas fa-user me-2"></i>用户名 <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" id="username" name="username" required 
+                               minlength="3" maxlength="20">
+                        <div class="form-text">3-20个字符，支持字母、数字、下划线</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="email" class="form-label">
+                            <i class="fas fa-envelope me-2"></i>邮箱地址 <span class="text-danger">*</span>
+                        </label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="form-text">用于接收重要通知和密码重置</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="password" class="form-label">
+                            <i class="fas fa-lock me-2"></i>密码 <span class="text-danger">*</span>
+                        </label>
+                        <input type="password" class="form-control" id="password" name="password" required 
+                               minlength="6">
+                        <div class="form-text">至少6个字符</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="confirm_password" class="form-label">
+                            <i class="fas fa-lock me-2"></i>确认密码 <span class="text-danger">*</span>
+                        </label>
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                        <div id="passwordMatch" class="form-text"></div>
+                    </div>
+                    
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="agree_terms" required>
+                        <label class="form-check-label" for="agree_terms">
+                            我已阅读并同意 <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">服务条款</a> 和 <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">隐私政策</a>
+                        </label>
+                    </div>
+                    
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="newsletter">
+                        <label class="form-check-label" for="newsletter">
+                            接收产品更新和技术资讯（可选）
+                        </label>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <i class="fas fa-user-plus me-2"></i>创建账户
+                        </button>
+                    </div>
+                </form>
+                
+                <hr>
+                
+                <div class="text-center">
+                    <p class="mb-0">已有账户？</p>
+                    <a href="{{ url_for('main.login') }}" class="btn btn-outline-primary">
+                        <i class="fas fa-sign-in-alt me-2"></i>立即登录
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 功能特性 -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h6 class="mb-0">
+                    <i class="fas fa-star me-2"></i>注册后您可以
+                </h6>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        使用高级AI审核功能
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        查看详细的智能体分析过程
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        访问实时监控面板
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        批量处理内容审核
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check text-success me-2"></i>
+                        获取个性化数据分析
+                    </li>
+                    <li class="mb-0">
+                        <i class="fas fa-check text-success me-2"></i>
+                        API密钥和开发者工具
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 服务条款模态框 -->
+<div class="modal fade" id="termsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">服务条款</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h6>1. 服务说明</h6>
+                <p>SenTox AI审核平台为用户提供基于多智能体架构的智能内容审核服务。</p>
+                
+                <h6>2. 使用规范</h6>
+                <ul>
+                    <li>不得使用本服务进行非法活动</li>
+                    <li>不得恶意攻击或干扰系统正常运行</li>
+                    <li>不得传播有害、违法或侵权内容</li>
+                </ul>
+                
+                <h6>3. 数据安全</h6>
+                <p>我们致力于保护用户数据安全，所有审核内容仅用于提供服务，不会泄露给第三方。</p>
+                
+                <h6>4. 免责声明</h6>
+                <p>本服务基于AI技术提供，审核结果仅供参考，最终决策请结合人工判断。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 隐私政策模态框 -->
+<div class="modal fade" id="privacyModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">隐私政策</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h6>1. 信息收集</h6>
+                <p>我们收集您提供的注册信息和使用服务过程中产生的数据。</p>
+                
+                <h6>2. 信息使用</h6>
+                <ul>
+                    <li>提供和改善服务质量</li>
+                    <li>发送重要通知和更新</li>
+                    <li>分析用户行为以优化系统</li>
+                </ul>
+                
+                <h6>3. 信息保护</h6>
+                <p>我们采用行业标准的安全措施保护您的个人信息，包括加密存储、访问控制等。</p>
+                
+                <h6>4. 信息分享</h6>
+                <p>除法律要求外，我们不会与第三方分享您的个人信息。</p>
+                
+                <h6>5. Cookie使用</h6>
+                <p>我们使用Cookie来提供更好的用户体验，您可以在浏览器设置中管理Cookie。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// 密码确认验证
+document.getElementById('confirm_password').addEventListener('input', function() {
+    const password = document.getElementById('password').value;
+    const confirmPassword = this.value;
+    const matchDiv = document.getElementById('passwordMatch');
+    
+    if (confirmPassword === '') {
+        matchDiv.textContent = '';
+        this.classList.remove('is-valid', 'is-invalid');
+    } else if (password === confirmPassword) {
+        matchDiv.textContent = '密码匹配';
+        matchDiv.className = 'form-text text-success';
+        this.classList.remove('is-invalid');
+        this.classList.add('is-valid');
+    } else {
+        matchDiv.textContent = '密码不匹配';
+        matchDiv.className = 'form-text text-danger';
+        this.classList.remove('is-valid');
+        this.classList.add('is-invalid');
+    }
+});
+
+// 用户名验证
+document.getElementById('username').addEventListener('input', function() {
+    const username = this.value;
+    const isValid = /^[a-zA-Z0-9_]{3,20}$/.test(username);
+    
+    if (username === '') {
+        this.classList.remove('is-valid', 'is-invalid');
+    } else if (isValid) {
+        this.classList.remove('is-invalid');
+        this.classList.add('is-valid');
+    } else {
+        this.classList.remove('is-valid');
+        this.classList.add('is-invalid');
+    }
+});
+
+// 邮箱验证
+document.getElementById('email').addEventListener('input', function() {
+    const email = this.value;
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    
+    if (email === '') {
+        this.classList.remove('is-valid', 'is-invalid');
+    } else if (isValid) {
+        this.classList.remove('is-invalid');
+        this.classList.add('is-valid');
+    } else {
+        this.classList.remove('is-valid');
+        this.classList.add('is-invalid');
+    }
+});
+
+// 表单提交验证
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm_password').value;
+    const agreeTerms = document.getElementById('agree_terms').checked;
+    
+    if (password !== confirmPassword) {
+        e.preventDefault();
+        alert('两次输入的密码不一致');
+        return;
+    }
+    
+    if (!agreeTerms) {
+        e.preventDefault();
+        alert('请阅读并同意服务条款和隐私政策');
+        return;
+    }
+    
+    // 显示加载状态
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>正在创建账户...';
+});
+</script>
+{% endblock %}
